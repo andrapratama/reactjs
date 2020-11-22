@@ -16,6 +16,10 @@ console.log(namaFunctionArrow());
 const arrowSingleLine = () => "arrow single sile"
 console.log(arrowSingleLine());
 
+const arrowSingleLineTambah = (x, y) => x + y;
+console.log(arrowSingleLineTambah(2, 8));
+
+//multi line
 const arrowMultiLine = (x, y) => {
     const a = x + 5;
     const b = y + 5;
