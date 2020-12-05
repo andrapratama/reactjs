@@ -4,39 +4,22 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    nama: "",
-    umur: ""
-  }
-
-  changeHandler = event => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value
-    })
+    nama: 'Andra',
+    dataArray: ['Andra', 'Pratama'],
+    umur: 26
   }
 
   render() {
-    const { nama, umur } = this.state
+    const { nama, dataArray, umur } = this.state
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <input
-            type="text"
-            value={nama}
-            name="nama"
-            onChange={this.changeHandler}
-          />
-          <h3>{nama}</h3>
+          {nama}
           <br />
-          <input
-            type="text"
-            value={umur}
-            name="umur"
-            onChange={this.changeHandler}
-          />
-          <h3>{umur}</h3>
+          {dataArray.map(single => single)}
           <br />
+          {umur}
         </header>
       </div>
     )
