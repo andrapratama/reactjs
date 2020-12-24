@@ -4,7 +4,8 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    data: ""
+    nama: "",
+    umur: ""
   }
 
   changeHandler = event => {
@@ -14,32 +15,28 @@ class App extends React.Component {
     })
   }
 
-  // mengambil data json saat halaman pertama kali di load
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(res => res.json())
-      .then(res => this.setState({
-        data: res
-      }));
-  }
-
   render() {
-    const { data } = this.state;
-    console.log({ data });
+    const { nama, umur } = this.state
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          {data ? data.map(datum => {
-            const { title, userId } = datum
-            return (
-              <p key={userId + title}>
-                {title} {userId}
-              </p>
-            )
-          }) : (
-              <h1>Loading...</h1>
-            )}
+          <input
+            type="text"
+            value={nama}
+            name="nama"
+            onChange={this.changeHandler}
+          />
+          <h3>{nama}</h3>
+          <br />
+          <input
+            type="text"
+            value={umur}
+            name="umur"
+            onChange={this.changeHandler}
+          />
+          <h3>{umur}</h3>
+          <br />
         </header>
       </div>
     )
