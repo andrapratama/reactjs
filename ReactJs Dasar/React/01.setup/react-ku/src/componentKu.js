@@ -1,9 +1,9 @@
 import React from 'react'
 
 const componentKu = (props) => {
-    const { pekerjaan, tempatTinggal, umur, merk, laptop, hobi } = props;
+    const { hasilKu, angkaKu } = props;
     return (
-        <p>{pekerjaan} {tempatTinggal} {umur} {merk} {laptop} {hobi}</p>
+        <p>Ini adalah {hasilKu} dan angka {angkaKu}</p>
     );
 };
 
